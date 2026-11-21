@@ -1,6 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Playfair_Display, Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
+  display: "swap",
+});
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -17,7 +26,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#FAF7F0",
+  themeColor: "#F8EEFC",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -26,29 +35,23 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://wedgramdesigns.vercel.app"),
   title: {
-    default: "Wedgram Designs | Bespoke Wedding Invitation Videos & Digital Invites",
+    default: "Wedgram Designs | Premium Wedding Invitation Videos & Digital Invites",
     template: "%s | Wedgram Designs",
   },
   description:
-    "Wedgram Designs crafts exquisite, customized wedding invitation videos, animated save-the-dates, and modern digital marriage invites tailored to your love story in Surat, Gujarat & worldwide.",
+    "Wedgram Designs is an exquisite Indian wedding invitation studio in Surat, Gujarat crafting bespoke video invitations, animated save-the-dates, and luxury digital wedding stationery.",
   keywords: [
     "Wedding Invitation Video Design",
     "Digital Wedding Invitations",
-    "Animated Wedding Invitations",
-    "Save the Date Wedding Videos",
-    "Wedding Invitation Designers in Surat",
-    "Custom Wedding Invitation Videos in India",
-    "Modern Minimalist Wedding Invitations",
+    "Animated Save the Date Videos",
+    "Custom Wedding Invitations India",
+    "Wedding Invitation Designers Surat",
     "Luxury Digital Wedding Stationery",
+    "Indian Wedding Card Videos",
   ],
   authors: [{ name: "Wedgram Designs", url: "https://wedgramdesigns.vercel.app" }],
   creator: "Wedgram Designs",
   publisher: "Wedgram Designs",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   alternates: {
     canonical: "https://wedgramdesigns.vercel.app",
   },
@@ -57,23 +60,23 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://wedgramdesigns.vercel.app",
     siteName: "Wedgram Designs",
-    title: "Wedgram Designs | Bespoke Wedding Invitation Videos & Digital Invites",
+    title: "Wedgram Designs | Premium Wedding Invitation Studio",
     description:
-      "Crafting exquisite wedding invitation videos, animated save-the-dates, and bespoke digital invitations that turn your love story into timeless art.",
+      "Beautiful invitations for your forever story. Thoughtfully crafted wedding invitation videos, animated save-the-dates, and bespoke digital suites.",
     images: [
       {
         url: "/images/logo.jpeg",
         width: 800,
         height: 800,
-        alt: "Wedgram Designs - Bespoke Wedding Invitations",
+        alt: "Wedgram Designs Brand Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wedgram Designs | Bespoke Wedding Invitation Videos",
+    title: "Wedgram Designs | Wedding Invitation Studio",
     description:
-      "Exquisite wedding invitation videos and animated digital invites crafted with elegance and creativity.",
+      "Bespoke wedding invitation videos, animated save-the-dates, and luxury digital stationery.",
     images: ["/images/logo.jpeg"],
   },
   robots: {
@@ -109,7 +112,7 @@ export default function RootLayout({
         url: "https://wedgramdesigns.vercel.app",
         logo: "https://wedgramdesigns.vercel.app/images/logo.jpeg",
         description:
-          "Wedgram Designs crafts bespoke wedding invitation videos uniquely tailored to reflect your love story.",
+          "Wedgram Designs crafts exquisite wedding invitation videos uniquely tailored to reflect your love story.",
         address: {
           "@type": "PostalAddress",
           addressLocality: "Surat",
@@ -124,7 +127,6 @@ export default function RootLayout({
         name: "Wedgram Designs",
         image: "https://wedgramdesigns.vercel.app/images/logo.jpeg",
         url: "https://wedgramdesigns.vercel.app",
-        telephone: "",
         priceRange: "$$",
         address: {
           "@type": "PostalAddress",
@@ -137,19 +139,6 @@ export default function RootLayout({
           latitude: "21.1702",
           longitude: "72.8311",
         },
-        openingHoursSpecification: {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-          ],
-          opens: "10:00",
-          closes: "20:00",
-        },
       },
       {
         "@type": "WebSite",
@@ -158,52 +147,6 @@ export default function RootLayout({
         name: "Wedgram Designs",
         publisher: {
           "@id": "https://wedgramdesigns.vercel.app/#organization",
-        },
-      },
-      {
-        "@type": "Service",
-        "@id": "https://wedgramdesigns.vercel.app/#service",
-        name: "Wedding Invitation Video Design",
-        provider: {
-          "@id": "https://wedgramdesigns.vercel.app/#organization",
-        },
-        areaServed: {
-          "@type": "Country",
-          name: "India",
-        },
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "Wedding Invitation Services",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Modern Minimalist Wedding Invitations",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Animated Save-the-Date Invitations",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Modern Wedding Invitation Videos",
-              },
-            },
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "Customised Wedding Invitation Designs",
-              },
-            },
-          ],
         },
       },
     ],
@@ -218,9 +161,11 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${cormorant.variable} ${plusJakarta.variable} font-sans antialiased bg-ivory-100 text-charcoal selection:bg-champagne-300 selection:text-charcoal`}
+        className={`${playfair.variable} ${cormorant.variable} ${plusJakarta.variable} font-sans antialiased bg-lavender-100 text-plum-deep selection:bg-floral-soft selection:text-plum-dark flex flex-col min-h-screen`}
       >
-        {children}
+        <Header />
+        <main className="flex-grow pt-24">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -4,8 +4,12 @@
 
 @layer base {
   :root {
-    --bg-ivory: #FAF7F0;
-    --text-charcoal: #292622;
+    --bg-lavender: #F8EEFC;
+    --bg-ivory: #FFFDF9;
+    --text-deep-plum: #49334D;
+    --text-muted: #776D78;
+    --border-champagne: #E8D9A9;
+    --brand-plum: #765078;
   }
 
   html {
@@ -14,40 +18,46 @@
   }
 
   body {
-    background-color: #FAF7F0;
-    color: #292622;
+    background-color: #F8EEFC;
+    color: #49334D;
     overflow-x: hidden;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   ::selection {
-    background-color: #E8D9BD;
-    color: #292622;
+    background-color: #CDB6DC;
+    color: #3B263F;
   }
 }
 
-/* Custom scrollbar */
+/* Custom romantic scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF7F0;
+  background: #F8EEFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #DEC8A3;
+  background: #CDB6DC;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B69A68;
+  background: #765078;
 }
 
-/* Elegant gold gradient accents */
-.gold-gradient-text {
-  background: linear-gradient(135deg, #B69A68 0%, #786134 100%);
+/* Plum & Gold metallic gradients */
+.plum-gradient-text {
+  background: linear-gradient(135deg, #765078 0%, #49334D 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gold-gradient-border {
-  border-image: linear-gradient(to right, #EDE4D6, #B69A68, #EDE4D6) 1;
+.gold-gradient-text {
+  background: linear-gradient(135deg, #C9B67C 0%, #A99354 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.champagne-border {
+  border-color: #E8D9A9;
 }
