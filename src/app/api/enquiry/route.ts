@@ -26,10 +26,20 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Access key configured securely on the server
-    const accessKey =
-      process.env.WEB3FORMS_ACCESS_KEY ||
-      "73a6a4de-14a9-4f61-81b9-37e3a9e36598";
+    // Access key securely fetched from server-side environment variables
+    const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+
+    if (!accessKey) {
+      console.error("WEB3FORMS_ACCESS_KEY is not defined in server environment variables.");
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "Enquiry service is temporarily unavailable. Please contact us directly.",
+        },
+        { status: 500 }
+      );
+    }
 
     // Format submission payload for existing backend processor
     const payload = {
