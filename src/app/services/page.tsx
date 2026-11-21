@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Video, FileText, Calendar, Sparkles } from "lucide-react";
+import ServicesCreativeHero from "@/components/heroes/ServicesCreativeHero";
 
 export const metadata: Metadata = {
   title: "Wedding Invitation Design Services | Wedgram Designs",
@@ -78,23 +79,10 @@ export default function ServicesPage() {
 
   return (
     <div className="space-y-20 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Hero Header */}
-      <section className="text-center max-w-3xl mx-auto pt-6">
-        <span className="text-xs uppercase tracking-luxury text-plum-royal font-semibold">
-          Design Offerings
-        </span>
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-plum-deep mt-3 mb-6">
-          Curated Wedding Invitation <br />
-          <span className="italic font-light plum-gradient-text">Design Services</span>
-        </h1>
-        <div className="w-16 h-[1.5px] bg-champagne mx-auto mb-6" />
-        <p className="text-base sm:text-lg text-mutedText font-light leading-relaxed">
-          From cinematic motion videos to luxury digital stationery and animated save-the-dates,
-          discover our bespoke offerings designed to set the perfect tone for your special day.
-        </p>
-      </section>
+      {/* 1. UNIQUE CREATIVE ASYMMETRIC SERVICES HERO */}
+      <ServicesCreativeHero />
 
-      {/* Services List */}
+      {/* 2. Detailed Services Listing */}
       <section className="space-y-16">
         {services.map((service, index) => {
           const IconComp = service.icon;
