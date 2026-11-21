@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { Sparkles, CheckCircle2 } from "lucide-react";
 import EnquiryForm from "@/components/EnquiryForm";
 

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Video, CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
+import { Video, CheckCircle2 } from "lucide-react";
 import EnquiryForm from "@/components/EnquiryForm";
 
 export const metadata: Metadata = {

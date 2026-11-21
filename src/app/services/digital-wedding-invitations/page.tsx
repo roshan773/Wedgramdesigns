@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { FileText, CheckCircle2, Sparkles } from "lucide-react";
+import { FileText, CheckCircle2 } from "lucide-react";
 import EnquiryForm from "@/components/EnquiryForm";
 
 export const metadata: Metadata = {

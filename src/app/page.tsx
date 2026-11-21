@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, ArrowRight, Heart, Video, Calendar, Palette, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { Sparkles, ArrowRight, Video, Palette, ShieldCheck } from "lucide-react";
 import EnquiryForm from "@/components/EnquiryForm";
 
 export default function HomePage() {
