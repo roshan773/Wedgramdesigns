@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-ivory: #FAF7F0;
+    --text-charcoal: #292622;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  body {
+    background-color: #FAF7F0;
+    color: #292622;
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: #E8D9BD;
+    color: #292622;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #DEC8A3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B69A68;
+}
+
+/* Elegant gold gradient accents */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #B69A68 0%, #786134 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-border {
+  border-image: linear-gradient(to right, #EDE4D6, #B69A68, #EDE4D6) 1;
+}
